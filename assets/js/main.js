@@ -141,10 +141,10 @@ function initProjectFilter() {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const filterValue = btn.getAttribute('data-filter');
+      const filterValue = (btn.getAttribute('data-filter') || 'all').toLowerCase();
 
       projectCards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
+        const cardCategory = (card.getAttribute('data-category') || '').toLowerCase();
         if (filterValue === 'all' || cardCategory.includes(filterValue)) {
           card.style.display = 'flex';
           card.style.animation = 'fadeIn 0.4s ease forwards';

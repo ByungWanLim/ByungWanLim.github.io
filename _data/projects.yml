@@ -1,7 +1,8 @@
 - id: "yeti"
   title: "YeTI : 단 2장의 노이즈 영상으로 실세계 sRGB 노이즈를 생성하는 Clean-Image-Free 프레임워크"
   subtitle: "You Only Need Two Noisy Images for Real-World sRGB Noise Generation"
-  category: "Generative AI & Denoising"
+  category: "Diffusion & Generative AI · Denoising"
+  filter_categories: "diffusion restoration ml"
   period: "2026.01 - 2026.03"
   featured: true
   thumbnail_icon: "fa-solid fa-camera-rotate"
@@ -41,7 +42,8 @@
 - id: "tigeresr"
   title: "TigerESR : 16배 초고배율 영상 복원을 위한 검색 증강 기반 멀티모달 디퓨전 프레임워크"
   subtitle: "Taming Generative Priors for Extreme-Scale Super-Resolution"
-  category: "Diffusion & Super-Resolution"
+  category: "Multimodal Diffusion · 16x Super-Resolution"
+  filter_categories: "diffusion restoration multimodal"
   period: "2025.09 - Present"
   featured: true
   thumbnail_icon: "fa-solid fa-wand-magic-sparkles"
@@ -81,7 +83,8 @@
 - id: "dakc"
   title: "DAKC : 열화 인지형 커널 코드북 기반의 올인원(All-in-One) 통합 영상 복원"
   subtitle: "Unified Image Restoration with Degradation-Aware Kernel Codebooks"
-  category: "Image Restoration"
+  category: "Unified Image Restoration"
+  filter_categories: "restoration ml"
   period: "2026.03 - Present"
   featured: true
   thumbnail_icon: "fa-solid fa-sliders"
@@ -117,7 +120,8 @@
 - id: "pediatric-ml"
   title: "극소 저출생 체중아 레보티록신 치료 궤적 예측 머신러닝 연구"
   subtitle: "Machine Learning Prediction of Levothyroxine Treatment Trajectories in VLBW Infants"
-  category: "Data Science & Medical AI"
+  category: "Healthcare AI & Clinical ML"
+  filter_categories: "ml multimodal"
   period: "2025.07 - Present"
   featured: false
   thumbnail_icon: "fa-solid fa-heart-pulse"

@@ -3,27 +3,27 @@
     <div class="section-header">
       <div class="section-badge">
         <i class="fa-solid fa-code-merge"></i>
-        <span>Featured Work</span>
+        <span>Featured Research & Engineering</span>
       </div>
       <h2 class="section-title">문제 해결 중심의 <span class="gradient-text">프로젝트 경험</span></h2>
       <p class="section-desc">
-        문제 정의(Problem)부터 아키텍처 설계, 최적화 및 정량적 성과(Results)를 창출한 대표 프로젝트입니다.
+        문제 정의(Problem)부터 알고리즘 및 아키텍처 설계, 정량적 검증(Results)을 거친 핵심 프로젝트입니다.
       </p>
     </div>
 
     <!-- Filter Buttons -->
     <div class="projects-filter-bar">
       <button class="filter-btn active" data-filter="all">전체보기</button>
-      <button class="filter-btn" data-filter="LLM">LLM & GenAI</button>
-      <button class="filter-btn" data-filter="Computer Vision">Computer Vision</button>
-      <button class="filter-btn" data-filter="Data Engineering">Data Engineering</button>
-      <button class="filter-btn" data-filter="MLOps">MLOps & Cloud</button>
+      <button class="filter-btn" data-filter="diffusion">Diffusion & Generative AI</button>
+      <button class="filter-btn" data-filter="restoration">Restoration & Super-Resolution</button>
+      <button class="filter-btn" data-filter="multimodal">Multi-Modal & Retrieval</button>
+      <button class="filter-btn" data-filter="ml">Data Science & Applied ML</button>
     </div>
 
     <!-- Projects Grid -->
     <div class="projects-grid">
       {% for project in site.data.projects %}
-      <div class="project-card" data-category="{{ project.category }}">
+      <div class="project-card" data-category="{{ project.filter_categories }} {{ project.category }}">
         <div>
           <div class="project-top">
             <div class="project-icon-box">
@@ -59,11 +59,11 @@
           <!-- Bottom Actions -->
           <div class="project-bottom-actions">
             <button type="button" class="project-detail-btn" aria-label="프로젝트 상세 보기">
-              <span>문제 해결 상세 보기</span>
+              <span>문제 해결 상세 분석</span>
               <i class="fa-solid fa-arrow-right"></i>
             </button>
             <div class="project-links">
-              {% if project.links.github %}
+              {% if project.links.github and project.links.github != "#" %}
               <a href="{{ project.links.github }}" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="GitHub">
                 <i class="fa-brands fa-github"></i>
               </a>
