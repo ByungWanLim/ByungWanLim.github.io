@@ -2,7 +2,7 @@
   title: "YeTI : 단 2장의 노이즈 영상으로 실세계 sRGB 노이즈를 생성하는 Clean-Image-Free 프레임워크"
   subtitle: "You Only Need Two Noisy Images for Real-World sRGB Noise Generation"
   category: "Diffusion & Generative AI · Denoising"
-  filter_categories: "diffusion restoration ml"
+  filter_categories: "diffusion restoration"
   period: "2026.01 - 2026.03"
   featured: true
   thumbnail_icon: "fa-solid fa-camera-rotate"
@@ -84,7 +84,7 @@
   title: "DAKC : 열화 인지형 커널 코드북 기반의 올인원(All-in-One) 통합 영상 복원"
   subtitle: "Unified Image Restoration with Degradation-Aware Kernel Codebooks"
   category: "Unified Image Restoration"
-  filter_categories: "restoration ml"
+  filter_categories: "restoration"
   period: "2026.03 - Present"
   featured: true
   thumbnail_icon: "fa-solid fa-sliders"
@@ -120,35 +120,37 @@
 - id: "pediatric-ml"
   title: "극소 저출생 체중아 레보티록신 치료 궤적 예측 머신러닝 연구"
   subtitle: "Machine Learning Prediction of Levothyroxine Treatment Trajectories in VLBW Infants"
-  category: "Healthcare AI & Clinical ML"
-  filter_categories: "ml multimodal"
+  category: "Medical AI & Explainable AI (XAI)"
+  filter_categories: "medical xai"
   period: "2025.07 - Present"
   featured: false
   thumbnail_icon: "fa-solid fa-heart-pulse"
   badge: "Pediatric Research Under Review (Co-Author)"
-  short_desc: "전국 단위 대규모 신생아 코호트 데이터를 기반으로 극소 저출생 체중아의 일시적 vs 장기 갑상선 호르몬 치료 경로를 조기 예측하는 임상 머신러닝 모델 연구입니다."
+  short_desc: "전국 단위 대규모 신생아 코호트 데이터를 기반으로 극소 저출생 체중아의 일시적 vs 장기 갑상선 호르몬 치료 경로를 조기 예측하고, XAI(설명 가능한 AI)로 임상 기여 요인을 분석한 연구입니다."
   tags:
+    - "Pediatric Research"
     - "Medical AI"
-    - "Clinical ML"
+    - "Explainable AI (XAI)"
+    - "Feature Importance"
     - "Cohort Study"
-    - "Feature Engineering"
-    - "Scikit-Learn / XGBoost"
+    - "Clinical ML"
   metrics:
     - label: "데이터셋"
       value: "전국 다기관 코호트"
     - label: "학술지 심사"
       value: "Pediatric Research"
     - label: "임상 활용성"
-      value: "치료 경로 조기 분류"
+      value: "XAI 기반 조기 분류"
   details:
     problem: >
-      극소 저출생 체중아에게 나타나는 갑상선 기능 이상이 일시적인지 장기적 치료가 필요한지 초기에 구분하기 어려워 맞춤형 치료 결정에 불확실성이 존재했습니다.
+      극소 저출생 체중아에게 나타나는 갑상선 기능 이상이 일시적인지 장기적 치료가 필요한지 초기에 구분하기 어려워 불필요한 약물 투여나 치료 지연 위험이 존재했습니다.
     solution: >
       1. 전국 대규모 코호트의 복합 임상/생체 지표를 분석하고 정밀한 결측치 보정 및 피처 엔지니어링 수행.<br>
-      2. 앙상블 머신러닝 알고리즘 및 변수 중요도(Feature Importance) 분석을 통해 조기 예측 모델 구축.
-    architecture: "Clinical Cohort Preprocessing → Feature Selection & Scaling → XGBoost/LightGBM Ensemble → Treatment Trajectory Classification"
+      2. 앙상블 머신러닝 알고리즘 및 XAI(설명 가능한 AI) 기법을 적용하여 모델 예측에 기여한 핵심 임상 인자들의 중요도를 투명하게 해석.
+    architecture: "Clinical Cohort Preprocessing → Feature Engineering → Ensemble ML Classifiers → Explainable AI (XAI) Attribution & Validation"
     results:
-      - "신생아 초기 데이터만으로 장기 약물 치료군을 높은 민감도와 특이도로 조기 선별할 수 있는 임상 지침 근거 마련"
+      - "신생아 초기 임상 데이터만으로 장기 약물 치료군을 높은 신뢰도로 조기 분류할 수 있는 머신러닝 예측 모델 수립"
+      - "XAI 분석을 통해 의료진이 신뢰할 수 있는 임상 지표 해석 근거 제공"
   links:
     github: "https://github.com/ByungWanLim"
     demo: "#"
