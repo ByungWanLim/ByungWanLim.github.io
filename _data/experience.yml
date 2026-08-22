@@ -1,0 +1,96 @@
+work_experience:
+  - role: "Graduate Research Assistant / Project Lead"
+    company: "한양대학교 비전 및 딥러닝 연구실 (Advisor: 김태현 교수님)"
+    period: "2025.03 - Present"
+    location: "Seoul, Korea"
+    description: "생성형 AI(Diffusion Model), 저수준 비전(Low-Level Vision) 및 멀티모달 초해상도/노이즈 모델링 연구"
+    achievements:
+      - "Clean 영상 없이 단 2장의 버스트 노이즈 영상으로 실제 sRGB 센서 노이즈를 생성하는 1-Step DiT 프레임워크 YeTI 제안 (ECCV 2026 Accepted, Poster, 공동1저자)"
+      - "16배 초고배율 영상 복원에서 디퓨전 환각을 억제하는 검색 증강 기반 TigerESR 프레임워크 제안 (In Preparation, 제1저자)"
+      - "8x NVIDIA RTX A6000 GPU 클러스터 기반 분산 학습 파이프라인 및 W&B 실험 로깅 환경 운영"
+
+  - role: "Research Student / B.S. Graduate Researcher"
+    company: "서강대학교 전자공학과 (Sogang University)"
+    period: "2023.03 - 2024.02"
+    location: "Seoul, Korea"
+    description: "카메라 특성 변화 및 영상 왜곡에 강인한 도메인 적응형 세그멘테이션 알고리즘 연구"
+    achievements:
+      - "카메라 센서 특성 왜곡 환경에서의 Transfer Learning 기반 시맨틱 세그멘테이션 기법 개발"
+      - "학사 졸업 논문: Domain Adaptive Semantic Segmentation Algorithm Robust to Changes in Camera Characteristics"
+
+education:
+  - degree: "컴퓨터소프트웨어학과 석사과정 (M.S. in Computer Science)"
+    school: "한양대학교 (Hanyang University)"
+    period: "2025.03 - Present"
+    gpa: "4.14 / 4.5"
+    details:
+      - "연구 분야: Deep Learning, Diffusion Models, Image Restoration, Multi-Modal Vision"
+      - "지도교수: 김태현 교수님 (Prof. Tae Hyun Kim)"
+      - "석사 학위 논문: YeTI: You Only Need Two Noisy Images for Real-World sRGB Noise Generation"
+
+  - degree: "전자공학과 학사 (B.S. in Electronic Engineering)"
+    school: "서강대학교 (Sogang University)"
+    period: "2016.03 - 2024.02"
+    gpa: "3.07 / 4.5"
+    details:
+      - "신호 및 시스템, 디지털 영상처리, 통신시스템, 컴퓨터 구조 전공"
+      - "학사 학위 논문: Domain Adaptive Semantic Segmentation Algorithm Robust to Changes in Camera Characteristics"
+
+publications:
+  - title: "YeTI: You Only Need Two Noisy Images for Real-World sRGB Noise Generation"
+    authors: "Jaekyun Ko*, Byung Wan Lim*, Soomin Lee, Dongjin Kim, Tae Hyun Kim†"
+    venue: "European Conference on Computer Vision (ECCV) 2026"
+    status: "Accepted & Poster"
+    badge: "ECCV 2026"
+    code_url: "https://github.com/ByungWanLim/YeTI-You-Only-Need-Two-Noisy-Images-for-Real-World-sRGB-Noise-Generation"
+    desc: "동일 씬의 단 2장 버스트 노이즈 영상만으로 Reconstruction Autoencoder와 1-Step Consistency DiT를 통해 센서 노이즈를 완벽 분리 및 합성하는 SOTA 프레임워크."
+
+  - title: "TigerESR: Taming Generative Priors for Extreme-Scale Super-Resolution"
+    authors: "Byung Wan Lim*, Jaekyun Ko*, Donglin Kim, Dain Lee, Tae Hyun Kim†"
+    venue: "In Preparation"
+    status: "In Preparation"
+    badge: "In Preparation"
+    desc: "16배 초고해상도 복원에서 T2I 디퓨전의 환각을 해결하기 위한 듀얼 스케일 레퍼런스 검색(DSIR) 및 라우팅 어텐션(RCA) 기반 멀티모달 복원 프레임워크."
+
+  - title: "DAKC: Unified Image Restoration with Degradation-Aware Kernel Codebooks"
+    authors: "Byung Wan Lim*, Jaekyun Ko*, Tae Hyun Kim†"
+    venue: "In Preparation"
+    status: "In Preparation"
+    badge: "In Preparation"
+    desc: "Denoising, Deraining, Dehazing 등 다중 저수준 비전 복원 작업을 단 하나의 경량 오토인코더와 동적 커널 코드북으로 처리하는 통합 모델."
+
+  - title: "Machine Learning Prediction of Transient Versus Long-Term Levothyroxine Treatment Trajectories in Very Low Birth Weight Infants: A Nationwide Cohort Study"
+    authors: "Jinjoo Choi*, Daehyun Kim*, Byung Wan Lim, Jae Yoon Na†, Tae Hyun Kim†, Hyun-Kyung Park†"
+    venue: "Pediatric Research"
+    status: "Under Review"
+    badge: "Medical AI"
+    desc: "전국 대규모 코호트 데이터 기반 극소 저출생 체중아의 갑상선 호르몬 치료 경로 조기 예측 임상 머신러닝 연구."
+
+awards:
+  - title: "우수논문상 (Outstanding Paper Award)"
+    competition: "한국정보처리학회 2025 추계학술대회 (ACK 2025)"
+    date: "2025.11"
+    desc: "생성형 딥러닝 기반의 영상 품질 향상 및 노이즈 모델링 관련 우수 연구 성과 인정"
+
+  - title: "3위 (3rd Place / 우수상)"
+    competition: "위성 이미지 기반 선박 탐지 AI 경진대회 (AIFactory)"
+    date: "2024.11"
+    desc: "원격 탐사 고해상도 위성 영상에서 악조건(파도, 구름) 속 선박 객체 정밀 검출 모델 개발"
+
+personal_projects:
+  - title: "극소 저출생 체중아 레보티록신 치료 궤적 예측 머신러닝 연구"
+    period: "2025.07 - Present"
+  - title: "Depth-wise Convolution 기반 Self-Attention을 활용한 3D Reconstruction Head 구조 개선"
+    period: "2024.03 - 2024.06"
+  - title: "Cross-Attention을 활용한 Visual Causal Inference 모델 경량화 및 성능 향상"
+    period: "2024.01 - 2024.03"
+  - title: "왜곡 이미지 도메인에서의 강인한 Scene Segmentation 및 전이 학습(Transfer Learning)"
+    period: "2023.07 - 2023.12"
+  - title: "화합물 대사 안정성(Metabolic Stability) 예측 모델링 및 데이터 분석"
+    period: "2023.08 - 2023.11"
+  - title: "건물 시계열 전력 소비량 예측 모델링 및 데이터 분석"
+    period: "2023.06 - 2023.08"
+  - title: "One-Shot Classifier 데이터 전처리 및 파이프라인 개발"
+    period: "2023.03 - 2023.06"
+  - title: "수중 음향 통신 신뢰성 및 데이터 분류를 위한 머신러닝 적용"
+    period: "2021.09 - 2022.06"

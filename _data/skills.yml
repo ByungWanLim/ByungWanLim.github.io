@@ -1,0 +1,60 @@
+categories:
+  - name: "Deep Learning & Vision AI"
+    icon: "fa-solid fa-brain"
+    skills:
+      - name: "PyTorch & PyTorch Lightning"
+        level: "Expert"
+        percentage: 96
+        desc: "Custom Layers, Multi-GPU Distributed Training (DDP), Checkpointing, Mixed-Precision"
+      - name: "Diffusion & Generative Models"
+        level: "Expert"
+        percentage: 94
+        desc: "Latent Diffusion (LDM), Stable Diffusion v2.1, ControlNet, 1-step Consistency Model, Conditional DiT"
+      - name: "Multi-Modal & Vision-Language"
+        level: "Expert"
+        percentage: 92
+        desc: "CLIP (ViT-H/14), OpenCLIP, BLIP-2, Routed Cross-Attention, Multi-token Generator"
+      - name: "Image Restoration & Super-Resolution"
+        level: "Master"
+        percentage: 98
+        desc: "Extreme-scale x16 SR, Real-world sRGB Denoising, DAKC Unified Restoration (Denoise/Derain/Dehaze)"
+
+  - name: "MLOps, Tools & Infrastructure"
+    icon: "fa-solid fa-server"
+    skills:
+      - name: "Weights & Biases (W&B)"
+        level: "Expert"
+        percentage: 92
+        desc: "실험 하이퍼파라미터 추적, 모델 아티팩트 관리, 멀티 GPU 로깅 파이프라인 자동화"
+      - name: "Multi-GPU Distributed Computing"
+        level: "Advanced"
+        percentage: 90
+        desc: "8x NVIDIA RTX A6000 클러스터 환경 최적화, 메모리 절감 및 병렬 분산 학습"
+      - name: "Faiss & Vector Retrieval"
+        level: "Advanced"
+        percentage: 90
+        desc: "GPU/CPU Faiss HNSW & Flat Inner-Product 기반 80만 장 규모 초고속 이미지 벡터 검색"
+      - name: "Docker & Linux / SSH"
+        level: "Advanced"
+        percentage: 88
+        desc: "재현 가능한 딥러닝 연구 환경 컨테이너화, 원격 서버 클러스터 구축 및 자동화 스크립트"
+
+  - name: "Programming & Scientific Computing"
+    icon: "fa-solid fa-code"
+    skills:
+      - name: "Python"
+        level: "Master"
+        percentage: 98
+        desc: "객체지향 모듈러 아키텍처, 비동기 I/O, 고속 NumPy/Tensor 벡터 연산 최적화"
+      - name: "C / C++"
+        level: "Advanced"
+        percentage: 82
+        desc: "알고리즘 구현, 임베디드 및 하드웨어 연동 기초, 성능 집약적 연산 처리"
+      - name: "MATLAB"
+        level: "Intermediate"
+        percentage: 80
+        desc: "신호 처리 및 통계 데이터 시각화, 제어/통신 시뮬레이션 모델링"
+      - name: "Git & Version Control"
+        level: "Expert"
+        percentage: 92
+        desc: "오픈소스 논문 코드 릴리즈, Git Flow 협업 및 버전 태깅"

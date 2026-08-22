@@ -1,0 +1,100 @@
+<section id="projects" class="projects-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">
+        <i class="fa-solid fa-code-merge"></i>
+        <span>Featured Work</span>
+      </div>
+      <h2 class="section-title">문제 해결 중심의 <span class="gradient-text">프로젝트 경험</span></h2>
+      <p class="section-desc">
+        문제 정의(Problem)부터 아키텍처 설계, 최적화 및 정량적 성과(Results)를 창출한 대표 프로젝트입니다.
+      </p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="projects-filter-bar">
+      <button class="filter-btn active" data-filter="all">전체보기</button>
+      <button class="filter-btn" data-filter="LLM">LLM & GenAI</button>
+      <button class="filter-btn" data-filter="Computer Vision">Computer Vision</button>
+      <button class="filter-btn" data-filter="Data Engineering">Data Engineering</button>
+      <button class="filter-btn" data-filter="MLOps">MLOps & Cloud</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      {% for project in site.data.projects %}
+      <div class="project-card" data-category="{{ project.category }}">
+        <div>
+          <div class="project-top">
+            <div class="project-icon-box">
+              <i class="{{ project.thumbnail_icon }}"></i>
+            </div>
+            <span class="project-period">{{ project.period }}</span>
+          </div>
+
+          <span class="badge" style="margin-bottom: 0.6rem;">{{ project.badge }}</span>
+          <h3 class="project-title">{{ project.title }}</h3>
+          <div class="project-subtitle">{{ project.subtitle }}</div>
+          <p class="project-desc">{{ project.short_desc }}</p>
+
+          <!-- Key Metrics -->
+          <div class="project-metrics-row">
+            {% for metric in project.metrics %}
+            <div class="metric-col">
+              <div class="metric-val">{{ metric.value }}</div>
+              <div class="metric-lbl">{{ metric.label }}</div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div>
+          <!-- Tags -->
+          <div class="project-tags">
+            {% for tag in project.tags %}
+            <span class="tag">#{{ tag }}</span>
+            {% endfor %}
+          </div>
+
+          <!-- Bottom Actions -->
+          <div class="project-bottom-actions">
+            <button type="button" class="project-detail-btn" aria-label="프로젝트 상세 보기">
+              <span>문제 해결 상세 보기</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <div class="project-links">
+              {% if project.links.github %}
+              <a href="{{ project.links.github }}" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded JSON for Modal -->
+        <script type="application/json" class="project-data-json">
+          {
+            "id": {{ project.id | jsonify }},
+            "title": {{ project.title | jsonify }},
+            "subtitle": {{ project.subtitle | jsonify }},
+            "category": {{ project.category | jsonify }},
+            "badge": {{ project.badge | jsonify }},
+            "period": {{ project.period | jsonify }},
+            "details": {
+              "problem": {{ project.details.problem | jsonify }},
+              "solution": {{ project.details.solution | jsonify }},
+              "architecture": {{ project.details.architecture | jsonify }},
+              "results": {{ project.details.results | jsonify }}
+            },
+            "links": {
+              "github": {{ project.links.github | jsonify }},
+              "demo": {{ project.links.demo | jsonify }}
+            }
+          }
+        </script>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

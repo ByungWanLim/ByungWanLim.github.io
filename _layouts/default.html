@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>{{ site.data.profile.name }} | {{ site.data.profile.role }}</title>
+  <meta name="description" content="{{ site.data.profile.tagline }} - {{ site.description }}">
+  <meta name="author" content="{{ site.data.profile.name }}">
+  <meta name="keywords" content="AI Engineer, Machine Learning, Data Engineer, Deep Learning, MLOps, PyTorch, LLM, RAG, Portfolio, 임병완, 인공지능 엔지니어">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
+  <meta property="og:title" content="{{ site.data.profile.name }} | {{ site.data.profile.role }}">
+  <meta property="og:description" content="{{ site.data.profile.tagline }}">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ site.data.profile.name }} | {{ site.data.profile.role }}">
+  <meta name="twitter:description" content="{{ site.data.profile.tagline }}">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="bg-glow-container">
+    <div class="bg-glow-circle-1"></div>
+    <div class="bg-glow-circle-2"></div>
+    <div class="bg-glow-circle-3"></div>
+  </div>
+
+  <!-- Header -->
+  {% include header.html %}
+
+  <!-- Main Content -->
+  <main id="main-content">
+    {{ content }}
+  </main>
+
+  <!-- Footer -->
+  {% include footer.html %}
+
+  <!-- Project Detail Modal Container -->
+  <div id="project-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <span id="modal-badge" class="badge modal-badge">Featured AI Project</span>
+        <h3 id="modal-title" class="modal-title">Project Title</h3>
+        <p id="modal-subtitle" class="modal-subtitle">Subtitle & Period</p>
+      </div>
+
+      <div class="modal-section">
+        <h4 class="modal-section-title"><i class="fa-solid fa-triangle-exclamation"></i> 문제 정의 & 배경 (Problem)</h4>
+        <p id="modal-problem" class="modal-text"></p>
+      </div>
+
+      <div class="modal-section">
+        <h4 class="modal-section-title"><i class="fa-solid fa-lightbulb"></i> 해결 방안 & 핵심 구현 (Solution)</h4>
+        <p id="modal-solution" class="modal-text"></p>
+      </div>
+
+      <div class="modal-section">
+        <h4 class="modal-section-title"><i class="fa-solid fa-diagram-project"></i> 시스템 아키텍처 (Architecture Flow)</h4>
+        <div id="modal-architecture" class="architecture-diagram-box"></div>
+      </div>
+
+      <div class="modal-section">
+        <h4 class="modal-section-title"><i class="fa-solid fa-chart-line"></i> 주요 정량적 성과 & 비즈니스 임팩트 (Results)</h4>
+        <ul id="modal-results" class="modal-results-list"></ul>
+      </div>
+
+      <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+        <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+          <i class="fa-brands fa-github"></i> GitHub 저장소 보기
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast-notification" class="toast-notification">
+    <i class="fa-solid fa-circle-check"></i>
+    <span class="toast-text">알림 메시지</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

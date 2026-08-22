@@ -1,0 +1,23 @@
+# Site Settings
+title: "임병완 | AI & Machine Learning Engineer Portfolio"
+email: "byungwan.lim@example.com"
+description: "AI / 머신러닝 / 데이터 엔지니어 포트폴리오 - 확장 가능한 머신러닝 파이프라인 및 딥러닝 모델 개발"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://ByungWanLim.github.io" # the base hostname & protocol for your site
+author: "ByungWan Lim"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md

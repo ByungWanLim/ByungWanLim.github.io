@@ -1,0 +1,40 @@
+name: "임병완"
+name_en: "Byung Wan Lim"
+role: "AI & Computer Vision Researcher / Engineer"
+affiliation: "Hanyang University · Department of Computer Science (M.S. Candidate)"
+photo: "/assets/img/profile.png"
+tagline: "Diffusion 기반 Image Restoration, Extreme-Scale Super-Resolution 및 실세계 노이즈 생성 모델을 연구하는 딥러닝 연구원 & AI 엔지니어입니다."
+bio: >
+  한양대학교 컴퓨터소프트웨어학과 석사과정(지도교수: 김태현 교수님)에서 Diffusion Models, Generative Priors, Multi-Modal Learning 및 Low-Level Vision(Image Denoising, Super-Resolution, Unified Restoration)을 집중 연구하고 있습니다.
+  ECCV 2026 논문(YeTI, 공동1저자)과 Extreme-Scale SR 연구(TigerESR) 등 이론적 모델 설계부터 대규모 Multi-GPU 분산 학습 및 프로덕션 수준의 MLOps 파이프라인 구축까지 전 과정을 주도해왔습니다.
+
+location: "Seoul, South Korea"
+email: "pook0612@hanyang.ac.kr"
+phone: "+82) 010-2780-1081"
+github: "https://github.com/ByungWanLim"
+linkedin: "https://www.linkedin.com/in/byung-wan-lim-b851ba345/"
+
+highlights:
+  - number: "ECCV 2026"
+    label: "Top-Tier Conference"
+    desc: "YeTI: Clean-free sRGB Noise Generation (Accepted & Poster, Co-First Author)"
+  - number: "4.14 / 4.5"
+    label: "M.S. GPA (한양대학교)"
+    desc: "석사과정 컴퓨터소프트웨어학과 전공 최우수 성적 이수"
+  - number: "64% Vote"
+    label: "User Study 1위"
+    desc: "TigerESR: 16배 초고해상도 Super-Resolution 사용자 평가 압도적 1위"
+
+core_competencies:
+  - title: "Diffusion & Generative Models"
+    desc: "Latent Diffusion Model(LDM), 1-step Consistency Model, Conditional DiT 및 ControlNet 파이프라인 설계"
+    icon: "fa-solid fa-brain"
+  - title: "Multi-Modal & Retrieval (RAG)"
+    desc: "CLIP 임베딩, Faiss 기반 Dual-Scale Image Retrieval(DSIR), Routed Cross-Attention(RCA) 멀티모달 토큰 정렬"
+    icon: "fa-solid fa-network-wired"
+  - title: "Low-Level Vision & Restoration"
+    desc: "16x Extreme Super-Resolution, Real-world sRGB Denoising, DAKC 통합 이미지 복원(Denoise/Derain/Dehaze)"
+    icon: "fa-solid fa-eye"
+  - title: "Multi-GPU Training & MLOps"
+    desc: "PyTorch Lightning, 8x NVIDIA A6000 분산 학습(DDP), Weights & Biases 실험 관리, Docker 환경 구축"
+    icon: "fa-solid fa-server"

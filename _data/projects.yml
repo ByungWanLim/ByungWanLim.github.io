@@ -1,0 +1,150 @@
+- id: "yeti"
+  title: "YeTI : 단 2장의 노이즈 영상으로 실세계 sRGB 노이즈를 생성하는 Clean-Image-Free 프레임워크"
+  subtitle: "You Only Need Two Noisy Images for Real-World sRGB Noise Generation"
+  category: "Generative AI & Denoising"
+  period: "2026.01 - 2026.03"
+  featured: true
+  thumbnail_icon: "fa-solid fa-camera-rotate"
+  badge: "ECCV 2026 Accepted (Poster, Co-First Author)"
+  short_desc: "Clean 정답 영상이나 카메라 메타데이터 없이, 동일 씬의 단 2장 버스트 노이즈 영상만으로 실제 센서의 신호 의존적 sRGB 노이즈 분포를 정밀하게 생성하는 1-Step Diffusion 모델입니다."
+  tags:
+    - "ECCV 2026"
+    - "PyTorch Lightning"
+    - "Conditional DiT"
+    - "Consistency Model"
+    - "Reconstruction Autoencoder"
+    - "W&B"
+    - "Multi-GPU"
+  metrics:
+    - label: "SIDD 노이즈 품질 (KLD)"
+      value: "0.0256 (SOTA)"
+    - label: "Downstream Denoising"
+      value: "37.09 dB (PSNR)"
+    - label: "필요 Clean 영상 수"
+      value: "0 장 (Clean-Free)"
+  details:
+    problem: >
+      실세계 스마트폰 및 카메라의 sRGB 노이즈는 ISP(Demosaicing, Gamma 등) 파이프라인을 거치며 심한 비선형 왜곡을 겪습니다. 기존 생성 모델들은 수천 장의 Clean-Noisy 정답 쌍이나 ISO/셔터스피드 등 카메라 메타데이터에 의존하여 실제 수집 비용이 극심하고 확장이 어려웠습니다.
+    solution: >
+      1. <b>Reconstruction Autoencoder (RAE)</b>: 동일 씬의 2장 버스트 영상 간 신호 일관성을 활용하여, InfoNCE 대조 학습과 RMSNorm/RDCA 블록으로 영상 구조(Structure)와 노이즈(Noise)를 완벽히 분리(Disentangle).<br>
+      2. <b>1-Step Conditional DiT (C-DiT)</b>: RAE가 추출한 노이즈 잠재 공간에서 Consistency Training 목적 함수를 적용하여 단 1회의 순방향 추론으로 센서 고유 노이즈 분포를 합성.<br>
+      3. <b>추론 편의성</b>: 단 1장의 Noisy 영상만 입력하면 원본 구조를 온전히 보존하면서 실세계 센서 노이즈가 주입된 다양한 합성 Noisy 영상을 무한 생성.
+    architecture: "Input Burst Noisy Images (I1, I2) → RAE (Structure Encoder Es + Noise Encoder En with Subtractive Injection) → Latent Space Disentanglement → 1-Step Conditional DiT with Consistency Loss → Synthesized Realistic Noisy Image"
+    results:
+      - "SIDD 벤치마크에서 KLD 0.0256, AKLD 0.1108을 기록하며 100% Clean 쌍을 사용한 기존 SOTA 모델(NAFlow)을 능가"
+      - "SIDD+, MAI2021, SID(Fujifilm, Sony), DND 등 미학습 외부 센서 데이터셋에서도 뛰어난 일반화 성능 입증"
+      - "합성 데이터를 활용한 Downstream Denoising(AP-BSN, MM-BSN) 훈련 시 실제 노이즈 학습 성능(36.58dB)을 상회하는 37.09dB PSNR 달성"
+  links:
+    github: "https://github.com/ByungWanLim/YeTI-You-Only-Need-Two-Noisy-Images-for-Real-World-sRGB-Noise-Generation"
+    demo: "#"
+
+- id: "tigeresr"
+  title: "TigerESR : 16배 초고배율 영상 복원을 위한 검색 증강 기반 멀티모달 디퓨전 프레임워크"
+  subtitle: "Taming Generative Priors for Extreme-Scale Super-Resolution"
+  category: "Diffusion & Super-Resolution"
+  period: "2025.09 - Present"
+  featured: true
+  thumbnail_icon: "fa-solid fa-wand-magic-sparkles"
+  badge: "In Preparation (First Author)"
+  short_desc: "극단적인 16배 초해상도(Extreme SR) 환경에서 T2I 디퓨전의 환각(Hallucination)과 의미 왜곡을 억제하기 위해, 듀얼 스케일 검색(DSIR)과 라우팅 어텐션(RCA) 멀티모달 토큰으로 디퓨전 생성을 정밀 제어합니다."
+  tags:
+    - "In Preparation"
+    - "Stable Diffusion v2.1"
+    - "ControlNet"
+    - "Faiss (GPU/CPU)"
+    - "OpenCLIP (ViT-H/14)"
+    - "CAdaIN"
+    - "PyTorch"
+  metrics:
+    - label: "ImageNet x16 FID"
+      value: "32.90 (SOTA)"
+    - label: "54인 User Study 선호도"
+      value: "64% (압도적 1위)"
+    - label: "Faiss GPU 검색 지연시간"
+      value: "0.090 ms / query"
+  details:
+    problem: >
+      32x32 크기 수준의 극도로 손상된 저해상도(LR) 영상을 512x512로 16배 확대할 때, 기존 T2I 디퓨전 모델은 LR 정보 부족으로 인해 엉뚱한 텍스처를 지어내는 환각(Hallucination) 및 의미론적 드리프트(Semantic Drift)가 심각하게 발생했습니다.
+    solution: >
+      1. <b>Dual-Scale Image Retrieval (DSIR)</b>: 80만 장의 대규모 갤러리에서 LR-스케일(열화 일치도)과 HR-스케일(디테일 품질)을 동시에 반영하여 가장 적합한 고해상도 참조 이미지를 0.09ms만에 검색.<br>
+      2. <b>Retrieval-guided Multi-token Generator (RMG)</b>: Routed Cross-Attention(RCA)을 통해 무관한 레퍼런스 노이즈를 차단하고 의미론적으로 일치하는 이미지/텍스트 멀티모달 토큰을 생성.<br>
+      3. <b>Multimodal Super-Resolution (MSR) & CAdaIN</b>: ControlNet 구조에 Context-Aware AdaIN을 결합하여 원본 LR의 기하학적 구조를 보존하면서 고주파 질감 디테일을 자연스럽게 합성.
+    architecture: "LR Input → DSIR (Dual-Scale Faiss k-NN) → Retrieved HR References → RMG (I2I with RCA + I2T with GPT-2 LM) → Multimodal Tokens → MSR (EFT with CAdaIN + ControlNet + Stable Diffusion v2.1) → High-Fidelity 16x HR Output"
+    results:
+      - "ImageNet-Test2000, DIV2K, RealSR, Flickr2K-Test100 4개 벤치마크 전 영역에서 기존 Diffusion SOTA(SeeSR, CoSeR, PASD) 대비 최고 FID(32.90) 및 CLIP-Score(0.7595) 달성"
+      - "54명 대상 540건의 블라인드 사용자 선호도 조사에서 64%의 압도적 득표율로 1위 차지"
+      - "GPU 가속 Faiss 색인으로 80만 장 대상 단일 쿼리당 0.090ms 초고속 검색 시간 달성"
+  links:
+    github: "https://github.com/ByungWanLim"
+    demo: "#"
+
+- id: "dakc"
+  title: "DAKC : 열화 인지형 커널 코드북 기반의 올인원(All-in-One) 통합 영상 복원"
+  subtitle: "Unified Image Restoration with Degradation-Aware Kernel Codebooks"
+  category: "Image Restoration"
+  period: "2026.03 - Present"
+  featured: true
+  thumbnail_icon: "fa-solid fa-sliders"
+  badge: "In Preparation (First Author)"
+  short_desc: "노이즈 제거(Denoising), 빗물 제거(Deraining), 안개 제거(Dehazing) 등 다채로운 저수준 비전 복원 작업을 단 하나의 경량 통합 프레임워크로 처리하는 커널 코드북 아키텍처입니다."
+  tags:
+    - "Unified Restoration"
+    - "Codebook Learning"
+    - "Lightweight Autoencoder"
+    - "PyTorch"
+    - "Model Compression"
+  metrics:
+    - label: "파라미터 수 절감"
+      value: "~70% ↓ (30% SOTA)"
+    - label: "지원 복원 태스크"
+      value: "Denoise/Derain/Dehaze"
+    - label: "복원 성능"
+      value: "SOTA PSNR/SSIM"
+  details:
+    problem: >
+      실제 환경에서는 비, 안개, 센서 노이즈 등 복합적인 열화가 발생하지만, 기존 딥러닝 복원 모델은 태스크마다 개별 대형 모델을 따로 구축해야 하므로 온디바이스 및 실시간 서빙 시 메모리 및 연산 부담이 컸습니다.
+    solution: >
+      1. 입력 영상의 열화 패턴을 스스로 판별하고 이에 대응하는 복원 커널을 동적으로 조회하는 Degradation-Aware Kernel Codebook 설계.<br>
+      2. 가벼운 인코더-디코더 구조에 코드북 커널을 적응형으로 주입하여 단일 모델로 멀티 태스크 복원 수행.
+    architecture: "Degraded Input → Degradation Feature Extractor → Dynamic Kernel Codebook Lookup → Adaptive Restoration Autoencoder → Restored Clean Image"
+    results:
+      - "기존 작업별 SOTA 모델 대비 약 30%의 파라미터 크기만으로 Denoising, Deraining, Dehazing 전 영역에서 최고 수준의 PSNR/SSIM 달성"
+      - "경량화 및 통합 아키텍처를 통한 단일 모델 프로덕션 배포 용이성 극대화"
+  links:
+    github: "https://github.com/ByungWanLim"
+    demo: "#"
+
+- id: "pediatric-ml"
+  title: "극소 저출생 체중아 레보티록신 치료 궤적 예측 머신러닝 연구"
+  subtitle: "Machine Learning Prediction of Levothyroxine Treatment Trajectories in VLBW Infants"
+  category: "Data Science & Medical AI"
+  period: "2025.07 - Present"
+  featured: false
+  thumbnail_icon: "fa-solid fa-heart-pulse"
+  badge: "Pediatric Research Under Review (Co-Author)"
+  short_desc: "전국 단위 대규모 신생아 코호트 데이터를 기반으로 극소 저출생 체중아의 일시적 vs 장기 갑상선 호르몬 치료 경로를 조기 예측하는 임상 머신러닝 모델 연구입니다."
+  tags:
+    - "Medical AI"
+    - "Clinical ML"
+    - "Cohort Study"
+    - "Feature Engineering"
+    - "Scikit-Learn / XGBoost"
+  metrics:
+    - label: "데이터셋"
+      value: "전국 다기관 코호트"
+    - label: "학술지 심사"
+      value: "Pediatric Research"
+    - label: "임상 활용성"
+      value: "치료 경로 조기 분류"
+  details:
+    problem: >
+      극소 저출생 체중아에게 나타나는 갑상선 기능 이상이 일시적인지 장기적 치료가 필요한지 초기에 구분하기 어려워 맞춤형 치료 결정에 불확실성이 존재했습니다.
+    solution: >
+      1. 전국 대규모 코호트의 복합 임상/생체 지표를 분석하고 정밀한 결측치 보정 및 피처 엔지니어링 수행.<br>
+      2. 앙상블 머신러닝 알고리즘 및 변수 중요도(Feature Importance) 분석을 통해 조기 예측 모델 구축.
+    architecture: "Clinical Cohort Preprocessing → Feature Selection & Scaling → XGBoost/LightGBM Ensemble → Treatment Trajectory Classification"
+    results:
+      - "신생아 초기 데이터만으로 장기 약물 치료군을 높은 민감도와 특이도로 조기 선별할 수 있는 임상 지침 근거 마련"
+  links:
+    github: "https://github.com/ByungWanLim"
+    demo: "#"

@@ -1,0 +1,42 @@
+<section id="skills" class="skills-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>Technical Arsenal</span>
+      </div>
+      <h2 class="section-title">전문 기술 스택 & <span class="gradient-text">엔지니어링 역량</span></h2>
+      <p class="section-desc">
+        딥러닝 프레임워크부터 분산 데이터 처리, MLOps 클라우드 인프라까지 실무에서 즉시 활용 가능한 핵심 기술셋입니다.
+      </p>
+    </div>
+
+    <div class="skills-container">
+      {% for category in site.data.skills.categories %}
+      <div class="skill-category-card">
+        <div class="skill-category-header">
+          <div class="skill-category-icon">
+            <i class="{{ category.icon }}"></i>
+          </div>
+          <h3 class="skill-category-title">{{ category.name }}</h3>
+        </div>
+
+        <div class="skills-list">
+          {% for skill in category.skills %}
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">{{ skill.name }}</span>
+              <span class="skill-level-badge">{{ skill.level }}</span>
+            </div>
+            <div class="skill-progress-bar">
+              <div class="skill-progress-fill" style="width: {{ skill.percentage }}%;"></div>
+            </div>
+            <p class="skill-detail-desc">{{ skill.desc }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

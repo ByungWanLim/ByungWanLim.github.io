@@ -1,0 +1,51 @@
+<section id="publications" class="publications-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Publications & Research</span>
+      </div>
+      <h2 class="section-title">학술 논문 & <span class="gradient-text">연구 발표 성과</span></h2>
+      <p class="section-desc">
+        국제 최고 권위 AI/컴퓨터 비전 학회(ECCV, NeurIPS 등)에 발표 및 투고된 대표 연구 논문들입니다.
+      </p>
+    </div>
+
+    <div class="publications-list">
+      {% for pub in site.data.experience.publications %}
+      <div class="pub-card">
+        <div class="pub-header">
+          <span class="badge pub-badge">{{ pub.badge }}</span>
+          <span class="pub-status-tag">{{ pub.status }}</span>
+        </div>
+
+        <h3 class="pub-title">{{ pub.title }}</h3>
+        
+        <div class="pub-authors">
+          {{ pub.authors | replace: "Byung Wan Lim*", "<strong>Byung Wan Lim*</strong>" | replace: "Byung Wan Lim", "<strong>Byung Wan Lim</strong>" }}
+        </div>
+
+        <div class="pub-venue">
+          <i class="fa-solid fa-landmark"></i>
+          <span>{{ pub.venue }}</span>
+        </div>
+
+        <p class="pub-desc">{{ pub.desc }}</p>
+
+        <div class="pub-actions">
+          {% if pub.code_url %}
+          <a href="{{ pub.code_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub Code</span>
+          </a>
+          {% endif %}
+          <a href="#projects" class="btn btn-secondary btn-sm">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>연구 상세 분석</span>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

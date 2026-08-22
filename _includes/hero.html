@@ -1,0 +1,103 @@
+<section id="hero" class="hero-section">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge-live">
+          <span class="pulse-dot"></span>
+          <span>Open to AI Research & Engineering Roles</span>
+        </div>
+
+        <div class="hero-profile-row">
+          {% if site.data.profile.photo %}
+          <div class="hero-avatar-wrapper">
+            <img src="{{ site.data.profile.photo | relative_url }}" alt="{{ site.data.profile.name }}" class="hero-avatar-img">
+            <div class="hero-avatar-glow"></div>
+          </div>
+          {% endif %}
+          <div>
+            <h1 class="hero-title">
+              <span class="gradient-text">{{ site.data.profile.name }}</span> <span style="font-size: 0.65em; font-weight: 500; color: var(--text-secondary);">({{ site.data.profile.name_en }})</span>
+            </h1>
+            <div class="hero-affiliation">
+              <i class="fa-solid fa-graduation-cap" style="color: var(--accent-primary);"></i>
+              <span>{{ site.data.profile.affiliation }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-role">&lt;{{ site.data.profile.role }} /&gt;</div>
+
+        <p class="hero-description">
+          {{ site.data.profile.tagline }}
+        </p>
+
+        <div class="hero-cta">
+          <a href="#publications" class="btn btn-primary">
+            <i class="fa-solid fa-book-bookmark"></i>
+            <span>논문 & 연구 보기</span>
+          </a>
+          <a href="#projects" class="btn btn-secondary">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>프로젝트 살펴보기</span>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fa-solid fa-envelope"></i>
+            <span>연락하기</span>
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="mailto:{{ site.data.profile.email }}" class="social-icon-btn" aria-label="Email Me" title="Email: {{ site.data.profile.email }}">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="tel:{{ site.data.profile.phone }}" class="social-icon-btn" aria-label="Phone" title="{{ site.data.profile.phone }}">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <span class="term-dot red"></span>
+            <span class="term-dot yellow"></span>
+            <span class="term-dot green"></span>
+            <span class="term-title">diffusion_restoration.py</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="code-comment"># Real-World Low-Level Vision & Diffusion Models</span></p>
+            <p><span class="code-keyword">import</span> torch, open_clip, faiss</p>
+            <p><span class="code-keyword">from</span> diffusion <span class="code-keyword">import</span> ConsistencyDiT, TigerESR, YeTI</p>
+            <br>
+            <p><span class="code-keyword">class</span> <span class="code-func">VisionAIResearcher</span>:</p>
+            <p>&nbsp;&nbsp;<span class="code-keyword">def</span> <span class="code-func">__init__</span>(self):</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;self.name = <span class="code-str">"{{ site.data.profile.name_en }}"</span></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;self.affiliation = <span class="code-str">"Hanyang Univ. (GPA 4.14/4.5)"</span></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;self.focus = [<span class="code-str">"16x Extreme-SR"</span>, <span class="code-str">"sRGB Noise Gen"</span>, <span class="code-str">"Diffusion"</span>]</p>
+            <br>
+            <p>&nbsp;&nbsp;<span class="code-keyword">async def</span> <span class="code-func">innovate</span>(self, degraded_input):</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># Taming generative priors & zero clean dependencies</span></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;restored = <span class="code-keyword">await</span> self.model.reconstruct(degraded_input)</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> evaluate_sota(restored, venue=<span class="code-str">"ECCV 2026 / Top-Tier"</span>)</p>
+          </div>
+        </div>
+
+        <div class="hero-stats-grid">
+          {% for stat in site.data.profile.highlights %}
+          <div class="stat-item">
+            <div class="stat-number">{{ stat.number }}</div>
+            <div class="stat-label">{{ stat.label }}</div>
+            <div class="stat-desc">{{ stat.desc }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
