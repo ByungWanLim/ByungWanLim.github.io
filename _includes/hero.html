@@ -14,15 +14,17 @@
           {% if site.data.profile.photo %}
           <div class="hero-avatar-wrapper">
             <img src="{{ site.data.profile.photo | relative_url }}" alt="{{ site.data.profile.name }}" class="hero-avatar-img">
+            <div class="hero-avatar-glow"></div>
           </div>
           {% endif %}
           <div class="hero-profile-info">
             <h1 class="hero-title">
-              <span class="hero-name-ko">{{ site.data.profile.name }}</span>
+              <span class="gradient-text">{{ site.data.profile.name }}</span>
               <span class="hero-name-en">({{ site.data.profile.name_en }})</span>
             </h1>
             <div class="hero-affiliation">
-              {{ site.data.profile.affiliation }}
+              <i class="fa-solid fa-graduation-cap" style="color: var(--accent-primary);"></i>
+              <span>{{ site.data.profile.affiliation }}</span>
             </div>
           </div>
         </div>
@@ -40,14 +42,14 @@
         <!-- Credentials 2-Column Grid -->
         <div class="hero-creds-grid">
           <div class="hero-cred-card">
-            <div class="hero-cred-icon">🎓</div>
+            <div class="hero-cred-icon"><i class="fa-solid fa-graduation-cap"></i></div>
             <div class="hero-cred-body">
               <div class="hero-cred-val">4.14 / 4.5 GPA</div>
               <div class="hero-cred-lbl">한양대 컴퓨터소프트웨어학과 석사</div>
             </div>
           </div>
           <div class="hero-cred-card">
-            <div class="hero-cred-icon">🏛</div>
+            <div class="hero-cred-icon"><i class="fa-solid fa-landmark"></i></div>
             <div class="hero-cred-body">
               <div class="hero-cred-val">Top-Tier AI 학회</div>
               <div class="hero-cred-lbl">ECCV 2026 주저자 연구 게재</div>
@@ -60,10 +62,12 @@
         <div class="hero-actions-container">
           <div class="hero-action-buttons">
             <a href="#experience" class="hero-dark-btn">
-              <span>🎓 연구 경력 & 학력</span>
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>연구 경력 & 학력</span>
             </a>
             <a href="#contact" class="hero-dark-btn">
-              <span>✉ 연락하기</span>
+              <i class="fa-solid fa-envelope"></i>
+              <span>연락하기</span>
             </a>
           </div>
 

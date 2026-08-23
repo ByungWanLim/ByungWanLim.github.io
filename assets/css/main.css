@@ -462,20 +462,34 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-avatar-wrapper {
   position: relative;
-  width: 68px;
-  height: 68px;
+  width: 104px;
+  height: 134px;
+  aspect-ratio: 3.5 / 4.5;
   flex-shrink: 0;
 }
 
 .hero-avatar-img {
   width: 100%;
   height: 100%;
-  border-radius: 12px;
+  border-radius: 18px;
   object-fit: cover;
-  object-position: top center;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  background: var(--bg-tertiary);
+  border: 2.5px solid var(--accent-primary);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-avatar-glow {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 20px;
+  background: var(--accent-gradient);
+  filter: blur(8px);
+  opacity: 0.55;
+  z-index: 0;
 }
 
 .hero-profile-info {
@@ -485,31 +499,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title {
-  font-size: 1.85rem;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 0.2rem;
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.35rem;
+  font-size: 3rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
 }
 
 .hero-name-ko {
-  color: #38bdf8;
-  font-weight: 800;
+  /* not used – handled by gradient-text */
 }
 
 .hero-name-en {
-  font-size: 0.85em;
-  font-weight: 600;
-  color: var(--text-primary);
+  font-size: 0.65em;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
 .hero-affiliation {
-  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* Role Title - Sans-Serif & Middle Dot */
@@ -553,6 +565,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-cred-icon {
   font-size: 1.35rem;
   flex-shrink: 0;
+  color: var(--accent-primary);
 }
 
 .hero-cred-body {
