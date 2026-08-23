@@ -32,6 +32,13 @@
           <div class="project-subtitle">{{ project.subtitle }}</div>
           <p class="project-desc">{{ project.short_desc }}</p>
 
+          {% if project.teaser_image %}
+          <div class="project-card-teaser-wrapper">
+            <img src="{{ project.teaser_image | relative_url }}" alt="{{ project.title }}" class="project-card-teaser-img" loading="lazy">
+            <span class="project-card-teaser-badge"><i class="fa-solid fa-eye"></i> Research Visual</span>
+          </div>
+          {% endif %}
+
           <!-- Key Metrics -->
           <div class="project-metrics-row">
             {% for metric in project.metrics %}
@@ -81,6 +88,8 @@
             "category": {{ project.category | jsonify }},
             "badge": {{ project.badge | jsonify }},
             "period": {{ project.period | jsonify }},
+            "teaser_image": {{ project.teaser_image | relative_url | jsonify }},
+            "teaser_caption": {{ project.teaser_caption | jsonify }},
             "details": {
               "problem": {{ project.details.problem | jsonify }},
               "solution": {{ project.details.solution | jsonify }},

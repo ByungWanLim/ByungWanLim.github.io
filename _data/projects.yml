@@ -6,6 +6,8 @@
   period: "2026.01 - 2026.03"
   featured: true
   thumbnail_icon: "fa-solid fa-camera-rotate"
+  teaser_image: "/assets/img/teaser_YeTI.png"
+  teaser_caption: "Fig 1. Clean 영상 의존성을 제거한 YeTI의 구조-노이즈 분리 및 1-Step 실세계 sRGB 노이즈 생성 프레임워크"
   badge: "🎉 ECCV 2026 Accepted (Poster, Co-First Author)"
   short_desc: "Clean 정답 영상이나 카메라 메타데이터 없이, 동일 씬의 단 2장 버스트 노이즈 영상만으로 실제 센서의 신호 의존적 sRGB 노이즈 분포를 정밀하게 생성하는 1-Step Diffusion 모델입니다."
   tags:
@@ -48,6 +50,8 @@
   period: "2025.09 - Present"
   featured: true
   thumbnail_icon: "fa-solid fa-wand-magic-sparkles"
+  teaser_image: "/assets/img/teaser_TigerESR.png"
+  teaser_caption: "Fig 1. 16배 극저해상도(LR) 입력으로부터 검색 증강 기반 멀티모달 토큰을 통해 정밀한 디테일을 복원한 TigerESR 시각화"
   badge: "📄 In Preparation (First Author)"
   short_desc: "극단적인 16배 초해상도(Extreme SR) 환경에서 T2I 디퓨전의 환각(Hallucination)과 의미 왜곡을 억제하기 위해, 듀얼 스케일 검색(DSIR)과 라우팅 어텐션(RCA) 멀티모달 토큰으로 디퓨전 생성을 정밀 제어합니다."
   tags:
@@ -89,6 +93,8 @@
   period: "2026.03 - Present"
   featured: true
   thumbnail_icon: "fa-solid fa-sliders"
+  teaser_image: "/assets/img/teaser_DAKC.png"
+  teaser_caption: "Fig 1. DAKC: 단일 모델로 Derain/Dehaze/Denoise를 동시 수행하는 경량화(10.4M) 통합 복원 및 파레토 최적 성능"
   badge: "📄 In Preparation (First Author)"
   short_desc: "노이즈 제거(Denoising), 빗물 제거(Deraining), 안개 제거(Dehazing) 등 다채로운 저수준 비전 복원 작업을 단 하나의 경량 통합 프레임워크로 처리하는 커널 코드북 아키텍처입니다."
   tags:
@@ -126,6 +132,8 @@
   period: "2025.07 - Present"
   featured: false
   thumbnail_icon: "fa-solid fa-heart-pulse"
+  teaser_image: "/assets/img/VLBW.png"
+  teaser_caption: "Fig 1. VLBW 극소 저출생 체중아 58개 임상 변수 기반 신경망 파이프라인 및 SHAP XAI 특성 중요도 분석"
   badge: "🏥 Pediatric Research Under Review (Co-Author)"
   short_desc: "전국 단위 대규모 신생아 코호트 데이터를 기반으로 극소 저출생 체중아의 일시적 vs 장기 갑상선 호르몬 치료 경로를 조기 예측하고, XAI(설명 가능한 AI)로 임상 기여 요인을 분석한 연구입니다."
   tags:

@@ -19,14 +19,14 @@ function initThemeToggle() {
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
   const themeIcon = document.getElementById('theme-icon');
   
-  // Default to dark theme unless user explicitly chose light
-  const savedTheme = localStorage.getItem('portfolio-theme');
-  
-  if (savedTheme === 'light') {
-    setTheme('light');
-  } else {
-    setTheme('dark');
+  // Clean up legacy key
+  if (localStorage.getItem('portfolio-theme')) {
+    localStorage.removeItem('portfolio-theme');
   }
+
+  // Dark is the absolute default
+  const savedTheme = localStorage.getItem('theme-preference') || 'dark';
+  setTheme(savedTheme);
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
@@ -38,7 +38,7 @@ function initThemeToggle() {
 
   function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('portfolio-theme', theme);
+    localStorage.setItem('theme-preference', theme);
     
     if (themeIcon) {
       if (theme === 'light') {
@@ -214,6 +214,21 @@ function initProjectModal() {
     document.getElementById('modal-solution').innerHTML = p.details.solution;
     document.getElementById('modal-architecture').textContent = p.details.architecture;
     
+    // Visual Teaser Figure
+    const figureSection = document.getElementById('modal-figure-section');
+    const modalImg = document.getElementById('modal-image');
+    const modalCaption = document.getElementById('modal-image-caption');
+    if (figureSection && modalImg && modalCaption) {
+      if (p.teaser_image) {
+        modalImg.src = p.teaser_image;
+        modalImg.alt = p.title;
+        modalCaption.textContent = p.teaser_caption || '';
+        figureSection.style.display = 'block';
+      } else {
+        figureSection.style.display = 'none';
+      }
+    }
+
     // Results list
     const resultsContainer = document.getElementById('modal-results');
     resultsContainer.innerHTML = '';
