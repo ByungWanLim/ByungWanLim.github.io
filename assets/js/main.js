@@ -186,11 +186,18 @@ function initProjectModal() {
     });
   });
 
-  // Teaser magnifier button — same action as detail button
-  document.querySelectorAll('.project-card-teaser-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  // Teaser wrapper (image + magnifier) — click anywhere to open modal
+  document.querySelectorAll('.project-teaser-click').forEach(wrapper => {
+    wrapper.style.cursor = 'pointer';
+    wrapper.addEventListener('click', (e) => {
       e.stopPropagation();
-      openModalFromCard(btn.closest('.project-card'));
+      openModalFromCard(wrapper.closest('.project-card'));
+    });
+    wrapper.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModalFromCard(wrapper.closest('.project-card'));
+      }
     });
   });
 

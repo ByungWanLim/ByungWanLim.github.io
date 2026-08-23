@@ -33,9 +33,9 @@
           <p class="project-desc">{{ project.short_desc }}</p>
 
           {% if project.teaser_image %}
-          <div class="project-card-teaser-wrapper">
+          <div class="project-card-teaser-wrapper project-teaser-click" role="button" tabindex="0" aria-label="연구 상세 분석 보기" title="클릭하여 상세 분석 보기">
             <img src="{{ project.teaser_image | relative_url }}" alt="{{ project.title }}" class="project-card-teaser-img" loading="lazy">
-            <button type="button" class="project-card-teaser-badge project-card-teaser-btn" aria-label="연구 상세 분석 보기" title="상세 분석 보기">🔍</button>
+            <div class="project-card-teaser-badge">🔍</div>
           </div>
           {% endif %}
 
