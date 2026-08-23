@@ -35,7 +35,7 @@
           {% if project.teaser_image %}
           <div class="project-card-teaser-wrapper">
             <img src="{{ project.teaser_image | relative_url }}" alt="{{ project.title }}" class="project-card-teaser-img" loading="lazy">
-            <span class="project-card-teaser-badge"><i class="fa-solid fa-eye"></i> Research Visual</span>
+            <button type="button" class="project-card-teaser-badge project-card-teaser-btn" aria-label="연구 상세 분석 보기" title="상세 분석 보기">🔍</button>
           </div>
           {% endif %}
 

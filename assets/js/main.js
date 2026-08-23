@@ -165,23 +165,32 @@ function initProjectModal() {
 
   if (!modalOverlay) return;
 
+  // Helper: open modal from any card trigger
+  function openModalFromCard(card) {
+    if (!card) return;
+    const dataScript = card.querySelector('.project-data-json');
+    if (!dataScript) return;
+    try {
+      const project = JSON.parse(dataScript.textContent);
+      populateModal(project);
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    } catch (err) {
+      console.error('Failed to parse project data:', err);
+    }
+  }
+
   detailBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const card = btn.closest('.project-card');
-      if (!card) return;
+      openModalFromCard(btn.closest('.project-card'));
+    });
+  });
 
-      // Extract details from data script tag inside the card
-      const dataScript = card.querySelector('.project-data-json');
-      if (!dataScript) return;
-
-      try {
-        const project = JSON.parse(dataScript.textContent);
-        populateModal(project);
-        modalOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      } catch (err) {
-        console.error('Failed to parse project data:', err);
-      }
+  // Teaser magnifier button — same action as detail button
+  document.querySelectorAll('.project-card-teaser-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openModalFromCard(btn.closest('.project-card'));
     });
   });
 
