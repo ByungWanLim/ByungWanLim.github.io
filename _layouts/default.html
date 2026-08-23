@@ -31,6 +31,18 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  <!-- Theme init script to ensure Dark Mode default -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('portfolio-theme');
+      if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 </head>
 <body>
   <!-- Ambient background glow elements -->
