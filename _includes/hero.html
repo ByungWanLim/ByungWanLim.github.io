@@ -1,134 +1,125 @@
 <section id="hero" class="hero-section">
   <div class="container">
     <div class="hero-grid">
+      <!-- Left Column: Profile & Intro -->
       <div class="hero-content">
+        <!-- Top Status Badge -->
         <div class="hero-badge-live">
           <span class="pulse-dot"></span>
-          <span>Open to AI Research & Engineering Roles</span>
+          <span>{{ site.data.profile.status_badge | default: "Kakao · Multimodal LLM Research" }}</span>
         </div>
 
+        <!-- Profile Header -->
         <div class="hero-profile-row">
           {% if site.data.profile.photo %}
           <div class="hero-avatar-wrapper">
             <img src="{{ site.data.profile.photo | relative_url }}" alt="{{ site.data.profile.name }}" class="hero-avatar-img">
-            <div class="hero-avatar-glow"></div>
           </div>
           {% endif %}
-          <div>
+          <div class="hero-profile-info">
             <h1 class="hero-title">
-              <span class="gradient-text">{{ site.data.profile.name }}</span> <span style="font-size: 0.65em; font-weight: 500; color: var(--text-secondary);">({{ site.data.profile.name_en }})</span>
+              <span class="hero-name-ko">{{ site.data.profile.name }}</span>
+              <span class="hero-name-en">({{ site.data.profile.name_en }})</span>
             </h1>
             <div class="hero-affiliation">
-              <i class="fa-solid fa-graduation-cap" style="color: var(--accent-primary);"></i>
-              <span>{{ site.data.profile.affiliation }}</span>
+              {{ site.data.profile.affiliation }}
             </div>
           </div>
         </div>
 
-        <div class="hero-role">&lt;{{ site.data.profile.role }} &gt;</div>
+        <!-- Role Title (Sans-serif & Middle Dot) -->
+        <div class="hero-role-title">
+          {{ site.data.profile.role }}
+        </div>
 
+        <!-- Tagline / Bio Summary -->
         <p class="hero-description">
           {{ site.data.profile.tagline }}
         </p>
 
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">
-            <i class="fa-solid fa-layer-group"></i>
-            <span>Publication & Projects 보기</span>
-          </a>
-          <a href="#experience" class="btn btn-secondary">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <span>연구 경력 & 학력</span>
-          </a>
-          <a href="#contact" class="btn btn-secondary">
-            <i class="fa-solid fa-envelope"></i>
-            <span>연락하기</span>
-          </a>
+        <!-- Credentials 2-Column Grid -->
+        <div class="hero-creds-grid">
+          <div class="hero-cred-card">
+            <div class="hero-cred-icon">🎓</div>
+            <div class="hero-cred-body">
+              <div class="hero-cred-val">4.14 / 4.5 GPA</div>
+              <div class="hero-cred-lbl">한양대 컴퓨터소프트웨어학과 석사</div>
+            </div>
+          </div>
+          <div class="hero-cred-card">
+            <div class="hero-cred-icon">🏛</div>
+            <div class="hero-cred-body">
+              <div class="hero-cred-val">Top-Tier AI 학회</div>
+              <div class="hero-cred-lbl">ECCV 2026 주저자 연구 게재</div>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-socials">
-          <a href="mailto:{{ site.data.profile.email }}" class="social-icon-btn" aria-label="Email Me" title="Email: {{ site.data.profile.email }}">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-          <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile" title="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a href="tel:{{ site.data.profile.phone }}" class="social-icon-btn" aria-label="Phone" title="{{ site.data.profile.phone }}">
-            <i class="fa-solid fa-phone"></i>
-          </a>
+        <!-- Bottom Actions Row -->
+        <div class="hero-bottom-divider"></div>
+        <div class="hero-actions-container">
+          <div class="hero-action-buttons">
+            <a href="#experience" class="hero-dark-btn">
+              <span>🎓 연구 경력 & 학력</span>
+            </a>
+            <a href="#contact" class="hero-dark-btn">
+              <span>✉ 연락하기</span>
+            </a>
+          </div>
+
+          <div class="hero-social-circles">
+            <a href="mailto:{{ site.data.profile.email }}" class="hero-circle-btn" aria-label="Email" title="Email: {{ site.data.profile.email }}">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="{{ site.data.profile.linkedin }}" target="_blank" rel="noopener noreferrer" class="hero-circle-btn" aria-label="LinkedIn" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="tel:{{ site.data.profile.phone }}" class="hero-circle-btn" aria-label="Phone" title="Phone: {{ site.data.profile.phone }}">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
         </div>
       </div>
 
+      <!-- Right Column: Featured Research Showcase Card -->
       <div class="hero-visual">
-        <!-- Featured Researcher Showcase Card -->
         <div class="showcase-card">
-          <div class="showcase-header">
-            <div class="showcase-badge-row">
-              <span class="badge badge-eccv">
-                <i class="fa-solid fa-trophy"></i>
-                <span>🎉 ECCV 2026 Accepted</span>
-              </span>
-              <span class="showcase-subbadge">Poster · Co-First Author</span>
+          <!-- Top Row: Badge & Subbadge -->
+          <div class="showcase-top-row">
+            <div class="showcase-badge-pill">
+              <i class="fa-solid fa-trophy"></i>
+              <span>ECCV 2026 Accepted</span>
+            </div>
+            <div class="showcase-author-tag">
+              Poster · Co-First Author
             </div>
           </div>
 
-          <div class="showcase-body">
-            <div class="showcase-paper-info">
-              <h3 class="showcase-paper-title">YeTI: You Only Need Two Noisy Images for Real-World sRGB Noise Generation</h3>
-              <p class="showcase-paper-desc">Clean 정답 영상 없이 단 2장의 버스트 영상으로 실제 센서 노이즈를 완벽 분리 및 1-Step DiT로 합성하는 SOTA 프레임워크</p>
-            </div>
+          <!-- Paper Info -->
+          <div class="showcase-paper-info">
+            <h3 class="showcase-paper-title">YeTI: You Only Need Two Noisy Images for Real-World sRGB Noise Generation</h3>
+            <p class="showcase-paper-desc">Clean 정답 영상 없이 단 2장의 버스트 영상으로 실제 센서 노이즈를 완벽 분리 및 합성하는 SOTA 프레임워크</p>
+          </div>
 
-            <div class="showcase-metrics-grid">
-              <div class="showcase-metric-box">
-                <div class="showcase-metric-val">0.0256</div>
-                <div class="showcase-metric-lbl">SIDD KLD (SOTA)</div>
-              </div>
-              <div class="showcase-metric-box">
-                <div class="showcase-metric-val">37.09 dB</div>
-                <div class="showcase-metric-lbl">Denoising PSNR</div>
-              </div>
-              <div class="showcase-metric-box">
-                <div class="showcase-metric-val">0 장</div>
-                <div class="showcase-metric-lbl">Clean 영상 의존성</div>
-              </div>
+          <!-- Core Research Spectrum -->
+          <div class="showcase-spectrum-section">
+            <div class="showcase-spectrum-header">
+              <i class="fa-solid fa-bolt" style="color: #fbbf24;"></i>
+              <span>CORE RESEARCH SPECTRUM</span>
             </div>
-
-            <!-- Academic & Research Highlights -->
-            <div class="showcase-creds-grid">
-              <div class="showcase-cred-item">
-                <div class="showcase-cred-icon">
-                  <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-                <div>
-                  <div class="showcase-cred-title">4.14 / 4.5 GPA</div>
-                  <div class="showcase-cred-desc">한양대 컴퓨터소프트웨어학과 석사</div>
-                </div>
-              </div>
-
-              <div class="showcase-cred-item">
-                <div class="showcase-cred-icon">
-                  <i class="fa-solid fa-landmark"></i>
-                </div>
-                <div>
-                  <div class="showcase-cred-title">Top-Tier AI 학회</div>
-                  <div class="showcase-cred-desc">ECCV 2026 주저자 연구 게재</div>
-                </div>
-              </div>
+            <div class="showcase-spectrum-grid">
+              <div class="spectrum-tag">Diffusion & Consistency DiT</div>
+              <div class="spectrum-tag">16x Extreme-SR</div>
+              <div class="spectrum-tag">Unified Restoration</div>
+              <div class="spectrum-tag">Dual-Scale Retrieval</div>
             </div>
+          </div>
 
-            <!-- Core Research Spectrum -->
-            <div class="showcase-focus-section">
-              <div class="showcase-focus-title">
-                <i class="fa-solid fa-bolt" style="color: var(--accent-primary);"></i>
-                <span>Core Research Spectrum</span>
-              </div>
-              <div class="showcase-tags">
-                <span class="showcase-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Diffusion & Consistency DiT</span>
-                <span class="showcase-tag"><i class="fa-solid fa-eye"></i> 16x Extreme-SR</span>
-                <span class="showcase-tag"><i class="fa-solid fa-sliders"></i> Unified Restoration</span>
-                <span class="showcase-tag"><i class="fa-solid fa-network-wired"></i> Dual-Scale Retrieval</span>
-              </div>
-            </div>
+          <!-- Full Width CTA Button -->
+          <div class="showcase-cta-container">
+            <a href="#projects" class="showcase-cta-btn">
+              <span>Publication & Projects 보기 ↓</span>
+            </a>
           </div>
         </div>
       </div>
