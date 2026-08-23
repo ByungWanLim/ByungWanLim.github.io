@@ -43,6 +43,7 @@ publications:
     status: "🎉 Accepted & Poster"
     badge: "🎉 ECCV 2026"
     code_url: "https://github.com/ByungWanLim/YeTI-You-Only-Need-Two-Noisy-Images-for-Real-World-sRGB-Noise-Generation"
+    paper_url: "https://arxiv.org/abs/2607.09193"
     desc: "동일 씬의 단 2장 버스트 노이즈 영상만으로 Reconstruction Autoencoder와 1-Step Consistency DiT를 통해 센서 노이즈를 완벽 분리 및 합성하는 SOTA 프레임워크."
 
   - title: "TigerESR: Taming Generative Priors for Extreme-Scale Super-Resolution"

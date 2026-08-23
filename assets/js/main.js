@@ -226,9 +226,19 @@ function initProjectModal() {
     }
 
     // Modal Links
+    const paperLink = document.getElementById('modal-paper-link');
+    if (paperLink) {
+      if (p.links && p.links.paper && p.links.paper !== '#' && p.links.paper !== '') {
+        paperLink.href = p.links.paper;
+        paperLink.style.display = 'inline-flex';
+      } else {
+        paperLink.style.display = 'none';
+      }
+    }
+
     const githubLink = document.getElementById('modal-github-link');
     if (githubLink) {
-      if (p.links && p.links.github) {
+      if (p.id === 'yeti' && p.links && p.links.github && p.links.github !== '#' && p.links.github !== '') {
         githubLink.href = p.links.github;
         githubLink.style.display = 'inline-flex';
       } else {

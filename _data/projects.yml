@@ -36,6 +36,7 @@
       - "SIDD+, MAI2021, SID(Fujifilm, Sony), DND 등 미학습 외부 센서 데이터셋에서도 뛰어난 일반화 성능 입증"
       - "합성 데이터를 활용한 Downstream Denoising(AP-BSN, MM-BSN) 훈련 시 실제 노이즈 학습 성능(36.58dB)을 상회하는 37.09dB PSNR 달성"
   links:
+    paper: "https://arxiv.org/abs/2607.09193"
     github: "https://github.com/ByungWanLim/YeTI-You-Only-Need-Two-Noisy-Images-for-Real-World-sRGB-Noise-Generation"
     demo: "#"
 
@@ -77,7 +78,7 @@
       - "54명 대상 540건의 블라인드 사용자 선호도 조사에서 64%의 압도적 득표율로 1위 차지"
       - "GPU 가속 Faiss 색인으로 80만 장 대상 단일 쿼리당 0.090ms 초고속 검색 시간 달성"
   links:
-    github: "https://github.com/ByungWanLim"
+    github: ""
     demo: "#"
 
 - id: "dakc"
@@ -114,7 +115,7 @@
       - "기존 작업별 SOTA 모델 대비 약 30%의 파라미터 크기만으로 Denoising, Deraining, Dehazing 전 영역에서 최고 수준의 PSNR/SSIM 달성"
       - "경량화 및 통합 아키텍처를 통한 단일 모델 프로덕션 배포 용이성 극대화"
   links:
-    github: "https://github.com/ByungWanLim"
+    github: ""
     demo: "#"
 
 - id: "pediatric-ml"
@@ -152,5 +153,5 @@
       - "신생아 초기 임상 데이터만으로 장기 약물 치료군을 높은 신뢰도로 조기 분류할 수 있는 머신러닝 예측 모델 수립"
       - "XAI 분석을 통해 의료진이 신뢰할 수 있는 임상 지표 해석 근거 제공"
   links:
-    github: "https://github.com/ByungWanLim"
+    github: ""
     demo: "#"

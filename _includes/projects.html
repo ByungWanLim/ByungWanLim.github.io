@@ -11,16 +11,6 @@
       </p>
     </div>
 
-    <!-- Filter Buttons -->
-    <div class="projects-filter-bar">
-      <button class="filter-btn active" data-filter="all">전체보기</button>
-      <button class="filter-btn" data-filter="publication">Publications (학술 논문)</button>
-      <button class="filter-btn" data-filter="diffusion">Diffusion & Generative AI</button>
-      <button class="filter-btn" data-filter="restoration">Restoration & Super-Resolution</button>
-      <button class="filter-btn" data-filter="multimodal">Multi-Modal & Retrieval</button>
-      <button class="filter-btn" data-filter="medical">Medical AI & XAI</button>
-    </div>
-
     <!-- Projects Grid -->
     <div class="projects-grid">
       {% for project in site.data.projects %}
@@ -68,8 +58,13 @@
               <i class="fa-solid fa-arrow-right"></i>
             </button>
             <div class="project-links">
-              {% if project.links.github and project.links.github != "#" %}
-              <a href="{{ project.links.github }}" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="GitHub">
+              {% if project.links.paper and project.links.paper != '#' and project.links.paper != '' %}
+              <a href="{{ project.links.paper }}" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="arXiv 논문 보기 (PDF/Abstract)">
+                <i class="fa-solid fa-file-lines"></i>
+              </a>
+              {% endif %}
+              {% if project.id == 'yeti' and project.links.github and project.links.github != '#' and project.links.github != '' %}
+              <a href="{{ project.links.github }}" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="GitHub Code 저장소">
                 <i class="fa-brands fa-github"></i>
               </a>
               {% endif %}
@@ -93,6 +88,7 @@
               "results": {{ project.details.results | jsonify }}
             },
             "links": {
+              "paper": {{ project.links.paper | jsonify }},
               "github": {{ project.links.github | jsonify }},
               "demo": {{ project.links.demo | jsonify }}
             }
