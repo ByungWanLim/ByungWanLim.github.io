@@ -87,7 +87,19 @@
           {% for p in site.data.experience.personal_projects %}
           <div class="personal-project-item">
             <div class="personal-project-title">
-              <i class="fa-solid fa-caret-right" style="color: var(--accent-primary);"></i>
+              <span class="project-index-badge">
+                {% case forloop.index %}
+                  {% when 1 %}i.
+                  {% when 2 %}ii.
+                  {% when 3 %}iii.
+                  {% when 4 %}iv.
+                  {% when 5 %}v.
+                  {% when 6 %}vi.
+                  {% when 7 %}vii.
+                  {% when 8 %}viii.
+                  {% else %}{{ forloop.index }}.
+                {% endcase %}
+              </span>
               <span>{{ p.title }}</span>
             </div>
             <div class="personal-project-period">{{ p.period }}</div>

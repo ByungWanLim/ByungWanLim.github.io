@@ -5,7 +5,7 @@ work_experience:
     location: "Seoul, Korea"
     description: "생성형 AI(Diffusion Model), 저수준 비전(Low-Level Vision) 및 멀티모달 초해상도/노이즈 모델링 연구"
     achievements:
-      - "Clean 영상 없이 단 2장의 버스트 노이즈 영상으로 실제 sRGB 센서 노이즈를 생성하는 1-Step DiT 프레임워크 YeTI 제안 (ECCV 2026 Accepted, Poster, 공동1저자)"
+      - "Clean 영상 없이 단 2장의 버스트 노이즈 영상으로 실제 sRGB 센서 노이즈를 생성하는 1-Step DiT 프레임워크 YeTI 제안 (🎉 ECCV 2026 Accepted, Poster, 공동1저자)"
       - "16배 초고배율 영상 복원에서 디퓨전 환각을 억제하는 검색 증강 기반 TigerESR 프레임워크 제안 (In Preparation, 제1저자)"
       - "8x NVIDIA RTX A6000 GPU 클러스터 기반 분산 학습 파이프라인 및 W&B 실험 로깅 환경 운영"
 
@@ -40,8 +40,8 @@ publications:
   - title: "YeTI: You Only Need Two Noisy Images for Real-World sRGB Noise Generation"
     authors: "Jaekyun Ko*, Byung Wan Lim*, Soomin Lee, Dongjin Kim, Tae Hyun Kim†"
     venue: "European Conference on Computer Vision (ECCV) 2026"
-    status: "Accepted & Poster"
-    badge: "ECCV 2026"
+    status: "🎉 Accepted & Poster"
+    badge: "🎉 ECCV 2026"
     code_url: "https://github.com/ByungWanLim/YeTI-You-Only-Need-Two-Noisy-Images-for-Real-World-sRGB-Noise-Generation"
     desc: "동일 씬의 단 2장 버스트 노이즈 영상만으로 Reconstruction Autoencoder와 1-Step Consistency DiT를 통해 센서 노이즈를 완벽 분리 및 합성하는 SOTA 프레임워크."
 

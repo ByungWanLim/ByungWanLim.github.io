@@ -2,18 +2,19 @@
   <div class="container">
     <div class="section-header">
       <div class="section-badge">
-        <i class="fa-solid fa-code-merge"></i>
-        <span>Featured Research & Engineering</span>
+        <i class="fa-solid fa-book-bookmark"></i>
+        <span>Research & Engineering</span>
       </div>
-      <h2 class="section-title">문제 해결 중심의 <span class="gradient-text">프로젝트 경험</span></h2>
+      <h2 class="section-title">Publication & <span class="gradient-text">Projects.</span></h2>
       <p class="section-desc">
-        문제 정의(Problem)부터 알고리즘 및 아키텍처 설계, 정량적 검증(Results)을 거친 핵심 프로젝트입니다.
+        국제 최고 권위 학회(ECCV) 게재 논문부터 대규모 멀티모달 생성 모델 및 실세계 복원 엔지니어링 프로젝트입니다.
       </p>
     </div>
 
     <!-- Filter Buttons -->
     <div class="projects-filter-bar">
       <button class="filter-btn active" data-filter="all">전체보기</button>
+      <button class="filter-btn" data-filter="publication">Publications (학술 논문)</button>
       <button class="filter-btn" data-filter="diffusion">Diffusion & Generative AI</button>
       <button class="filter-btn" data-filter="restoration">Restoration & Super-Resolution</button>
       <button class="filter-btn" data-filter="multimodal">Multi-Modal & Retrieval</button>
@@ -23,7 +24,7 @@
     <!-- Projects Grid -->
     <div class="projects-grid">
       {% for project in site.data.projects %}
-      <div class="project-card" data-category="{{ project.filter_categories }} {{ project.category }}">
+      <div class="project-card {% if project.id == 'yeti' %}project-card-highlight{% endif %}" data-category="{{ project.filter_categories }} {{ project.category }}">
         <div>
           <div class="project-top">
             <div class="project-icon-box">
@@ -32,7 +33,11 @@
             <span class="project-period">{{ project.period }}</span>
           </div>
 
+          {% if project.id == 'yeti' %}
+          <span class="badge badge-eccv" style="margin-bottom: 0.6rem;">{{ project.badge }}</span>
+          {% else %}
           <span class="badge" style="margin-bottom: 0.6rem;">{{ project.badge }}</span>
+          {% endif %}
           <h3 class="project-title">{{ project.title }}</h3>
           <div class="project-subtitle">{{ project.subtitle }}</div>
           <p class="project-desc">{{ project.short_desc }}</p>

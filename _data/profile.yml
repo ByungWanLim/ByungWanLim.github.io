@@ -15,15 +15,15 @@ github: "https://github.com/ByungWanLim"
 linkedin: "https://www.linkedin.com/in/byung-wan-lim-b851ba345/"
 
 highlights:
-  - number: "ECCV 2026"
-    label: "Top-Tier Conference"
-    desc: "YeTI: Clean-free sRGB Noise Generation (Accepted & Poster, Co-First Author)"
+  - number: "🎉 ECCV 2026"
+    label: "Accepted & Poster"
+    desc: "YeTI: Clean-Image-Free sRGB Noise Generation (Co-First Author)"
   - number: "4.14 / 4.5"
     label: "M.S. GPA (한양대학교)"
-    desc: "석사과정 컴퓨터소프트웨어학과 전공 최우수 성적 이수"
-  - number: "64% Vote"
-    label: "User Study 1위"
-    desc: "TigerESR: 16배 초고해상도 Super-Resolution 사용자 평가 압도적 1위"
+    desc: "컴퓨터소프트웨어학과 석사과정 최우수 성적 이수"
+  - number: "3+ Lead Works"
+    label: "Top Research Projects"
+    desc: "YeTI (ECCV '26), TigerESR (Extreme SR), DAKC (Unified Restoration)"
 
 core_competencies:
   - title: "Diffusion & Generative Models"

@@ -25,20 +25,20 @@
           </div>
         </div>
 
-        <div class="hero-role">&lt;{{ site.data.profile.role }} /&gt;</div>
+        <div class="hero-role">&lt;{{ site.data.profile.role }} &gt;</div>
 
         <p class="hero-description">
           {{ site.data.profile.tagline }}
         </p>
 
         <div class="hero-cta">
-          <a href="#publications" class="btn btn-primary">
-            <i class="fa-solid fa-book-bookmark"></i>
-            <span>논문 & 연구 보기</span>
-          </a>
-          <a href="#projects" class="btn btn-secondary">
+          <a href="#projects" class="btn btn-primary">
             <i class="fa-solid fa-layer-group"></i>
-            <span>프로젝트 살펴보기</span>
+            <span>Publication & Projects 보기</span>
+          </a>
+          <a href="#experience" class="btn btn-secondary">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>연구 경력 & 학력</span>
           </a>
           <a href="#contact" class="btn btn-secondary">
             <i class="fa-solid fa-envelope"></i>
@@ -47,9 +47,6 @@
         </div>
 
         <div class="hero-socials">
-          <a href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile" title="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
           <a href="mailto:{{ site.data.profile.email }}" class="social-icon-btn" aria-label="Email Me" title="Email: {{ site.data.profile.email }}">
             <i class="fa-solid fa-envelope"></i>
           </a>
@@ -63,39 +60,76 @@
       </div>
 
       <div class="hero-visual">
-        <div class="terminal-card">
-          <div class="terminal-header">
-            <span class="term-dot red"></span>
-            <span class="term-dot yellow"></span>
-            <span class="term-dot green"></span>
-            <span class="term-title">diffusion_restoration.py</span>
+        <!-- Featured Researcher Showcase Card -->
+        <div class="showcase-card">
+          <div class="showcase-header">
+            <div class="showcase-badge-row">
+              <span class="badge badge-eccv">
+                <i class="fa-solid fa-trophy"></i>
+                <span>🎉 ECCV 2026 Accepted</span>
+              </span>
+              <span class="showcase-subbadge">Poster · Co-First Author</span>
+            </div>
           </div>
-          <div class="terminal-body">
-            <p><span class="code-comment"># Real-World Low-Level Vision & Diffusion Models</span></p>
-            <p><span class="code-keyword">import</span> torch, open_clip, faiss</p>
-            <p><span class="code-keyword">from</span> diffusion <span class="code-keyword">import</span> ConsistencyDiT, TigerESR, YeTI</p>
-            <br>
-            <p><span class="code-keyword">class</span> <span class="code-func">VisionAIResearcher</span>:</p>
-            <p>&nbsp;&nbsp;<span class="code-keyword">def</span> <span class="code-func">__init__</span>(self):</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;self.name = <span class="code-str">"{{ site.data.profile.name_en }}"</span></p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;self.affiliation = <span class="code-str">"Hanyang Univ. (GPA 4.14/4.5)"</span></p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;self.focus = [<span class="code-str">"16x Extreme-SR"</span>, <span class="code-str">"sRGB Noise Gen"</span>, <span class="code-str">"Diffusion"</span>]</p>
-            <br>
-            <p>&nbsp;&nbsp;<span class="code-keyword">async def</span> <span class="code-func">innovate</span>(self, degraded_input):</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment"># Taming generative priors & zero clean dependencies</span></p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;restored = <span class="code-keyword">await</span> self.model.reconstruct(degraded_input)</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> evaluate_sota(restored, venue=<span class="code-str">"ECCV 2026 / Top-Tier"</span>)</p>
-          </div>
-        </div>
 
-        <div class="hero-stats-grid">
-          {% for stat in site.data.profile.highlights %}
-          <div class="stat-item">
-            <div class="stat-number">{{ stat.number }}</div>
-            <div class="stat-label">{{ stat.label }}</div>
-            <div class="stat-desc">{{ stat.desc }}</div>
+          <div class="showcase-body">
+            <div class="showcase-paper-info">
+              <h3 class="showcase-paper-title">YeTI: You Only Need Two Noisy Images for Real-World sRGB Noise Generation</h3>
+              <p class="showcase-paper-desc">Clean 정답 영상 없이 단 2장의 버스트 영상으로 실제 센서 노이즈를 완벽 분리 및 1-Step DiT로 합성하는 SOTA 프레임워크</p>
+            </div>
+
+            <div class="showcase-metrics-grid">
+              <div class="showcase-metric-box">
+                <div class="showcase-metric-val">0.0256</div>
+                <div class="showcase-metric-lbl">SIDD KLD (SOTA)</div>
+              </div>
+              <div class="showcase-metric-box">
+                <div class="showcase-metric-val">37.09 dB</div>
+                <div class="showcase-metric-lbl">Denoising PSNR</div>
+              </div>
+              <div class="showcase-metric-box">
+                <div class="showcase-metric-val">0 장</div>
+                <div class="showcase-metric-lbl">Clean 영상 의존성</div>
+              </div>
+            </div>
+
+            <!-- Academic & Research Highlights -->
+            <div class="showcase-creds-grid">
+              <div class="showcase-cred-item">
+                <div class="showcase-cred-icon">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                  <div class="showcase-cred-title">4.14 / 4.5 GPA</div>
+                  <div class="showcase-cred-desc">한양대 컴퓨터소프트웨어학과 석사</div>
+                </div>
+              </div>
+
+              <div class="showcase-cred-item">
+                <div class="showcase-cred-icon">
+                  <i class="fa-solid fa-landmark"></i>
+                </div>
+                <div>
+                  <div class="showcase-cred-title">Top-Tier AI 학회</div>
+                  <div class="showcase-cred-desc">ECCV 2026 주저자 연구 게재</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Core Research Spectrum -->
+            <div class="showcase-focus-section">
+              <div class="showcase-focus-title">
+                <i class="fa-solid fa-bolt" style="color: var(--accent-primary);"></i>
+                <span>Core Research Spectrum</span>
+              </div>
+              <div class="showcase-tags">
+                <span class="showcase-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Diffusion & Consistency DiT</span>
+                <span class="showcase-tag"><i class="fa-solid fa-eye"></i> 16x Extreme-SR</span>
+                <span class="showcase-tag"><i class="fa-solid fa-sliders"></i> Unified Restoration</span>
+                <span class="showcase-tag"><i class="fa-solid fa-network-wired"></i> Dual-Scale Retrieval</span>
+              </div>
+            </div>
           </div>
-          {% endfor %}
         </div>
       </div>
     </div>
