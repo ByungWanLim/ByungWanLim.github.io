@@ -30,6 +30,12 @@
           <i class="fa-brands fa-linkedin"></i>
           <span>LinkedIn</span>
         </a>
+        {% if site.data.profile.phone %}
+        <a href="tel:{{ site.data.profile.phone }}" class="btn btn-secondary">
+          <i class="fa-solid fa-phone"></i>
+          <span>전화</span>
+        </a>
+        {% endif %}
       </div>
     </div>
   </div>
